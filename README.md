@@ -1,32 +1,32 @@
-# Medora Builders static website
+# Medora Builders Website
 
-This is a server-free static website. It can be hosted on GitHub Pages, Netlify, Cloudflare Pages, cPanel/shared hosting, or any ordinary web server.
+Official static website for Medora Builders, a Kerala-based construction and design company.
 
-## Preview locally
+The site presents Medora's services, project portfolio, real estate enquiry support, interior design work and contact options.
 
-Open `index.html` directly in a browser, or use any simple static preview extension such as VS Code Live Server.
+## Website Pages
 
-## Add a portfolio project
+- `index.html` - Home
+- `about.html` - About
+- `services.html` - Services
+- `interior-design.html` - Interior Design & Work
+- `projects.html` - Portfolio
+- `project.html` - Project detail view
+- `real-estate.html` - Real estate enquiries
+- `contact.html` - Contact
 
-1. Copy the new project images into `assets/images/`.
-2. Open `assets/js/projects-data.js`.
-3. Duplicate an existing project object.
-4. Give it a unique `id` and replace the title, details, categories and image paths.
+## Hosting
 
-The Projects page, Home featured-project section and Project Details page are generated automatically from that file.
+This is a static website and can be hosted on GitHub Pages or any standard static hosting service.
 
-## Contact form
+No backend server is required. The contact form opens the visitor's email application with the enquiry details prepared.
 
-The contact form intentionally uses no server. On submission it opens the visitor's email application with the enquiry filled in. Phone and WhatsApp links work directly.
+## Assets
 
-## Main files
+Website images, logos and icons are stored in `assets/images/`.
 
-- `index.html` — Home
-- `about.html` — About
-- `services.html` — Services
-- `projects.html` — Portfolio
-- `project.html?id=...` — Project details
-- `contact.html` — Contact
-- `assets/css/styles.css` — All styling
-- `assets/js/app.js` — Navigation, filters, lightbox and interactions
-- `assets/js/projects-data.js` — Editable portfolio content
+Styling and frontend interactions are handled through files in `assets/css/` and `assets/js/`.
+
+## Notes
+
+Do not commit private credentials, client information, unpublished pricing, or sensitive property details to this repository.

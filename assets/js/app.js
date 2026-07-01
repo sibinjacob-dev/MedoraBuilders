@@ -3,6 +3,7 @@
 
   const page = document.body.dataset.page || "";
   const projects = window.MEDORA_PROJECTS || [];
+  const realEstate = window.MEDORA_REAL_ESTATE || { listings: [] };
 
   const icon = (name) => {
     const icons = {
@@ -27,10 +28,16 @@
     const footer = document.querySelector("[data-site-footer]");
 
     if (header) {
+      /*
+       * Main navigation list.
+       * To add a page, add: ["Label", "file.html", "page-key"]
+       * Then set <body data-page="page-key"> in that page so the active link works.
+       */
       const links = [
         ["Home", "index.html", "home"],
         ["About", "about.html", "about"],
         ["Services", "services.html", "services"],
+        ["Interiors", "interior-design.html", "interiors"],
         ["Projects", "projects.html", "projects"],
         ["Real Estate", "real-estate.html", "real-estate"],
         ["Contact", "contact.html", "contact"]
@@ -82,6 +89,7 @@
                 <h3>Explore</h3>
                 <a href="about.html">Our studio</a>
                 <a href="services.html">Expertise</a>
+                <a href="interior-design.html">Interiors</a>
                 <a href="projects.html">Selected work</a>
                 <a href="real-estate.html">Real estate</a>
                 <a href="contact.html">Contact</a>
@@ -172,10 +180,84 @@
       </article>`;
   }
 
+  function escapeHTML(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function propertyEnquiryHref(property) {
+    const enquiry = property.enquiry || `${property.title} enquiry`;
+    return `contact.html?project=${encodeURIComponent(enquiry)}`;
+  }
+
+  function propertyCard(property) {
+    const href = propertyEnquiryHref(property);
+    const facts = property.facts || [];
+
+    return `
+      <article class="property-card" data-reveal>
+        <a class="property-image property-placeholder" href="${href}" aria-label="Enquire about ${escapeHTML(property.title)}">
+          <span class="property-status">${escapeHTML(property.statusLabel || "Available")}</span>
+          <div class="property-placeholder-content">
+            <strong>${escapeHTML(property.title)}</strong>
+            <p>Property details</p>
+          </div>
+        </a>
+        <div class="property-copy">
+          <div class="property-meta"><span>${escapeHTML(property.location)}</span><span>${escapeHTML(property.type)}</span></div>
+          <h3>${escapeHTML(property.title)}</h3>
+          <p>${escapeHTML(property.summary)}</p>
+          <dl class="property-facts-list">
+            ${facts
+              .map(
+                (fact) => `
+                  <div><dt>${escapeHTML(fact.label)}</dt><dd>${escapeHTML(fact.value)}</dd></div>`
+              )
+              .join("")}
+          </dl>
+          <a class="text-link" href="${href}">${escapeHTML(property.ctaLabel || "Request details")}
+            ${icon("arrow")}
+          </a>
+        </div>
+      </article>`;
+  }
+
+  function renderRealEstate() {
+    const feature = document.querySelector("[data-real-estate-feature]");
+    const grid = document.querySelector("[data-real-estate-grid]");
+    const listingsSection = document.querySelector("[data-real-estate-listings-section]");
+    const listings = realEstate.listings || [];
+
+    if (feature && realEstate.featured) {
+      const featured = realEstate.featured;
+      const href = `contact.html?project=${encodeURIComponent(featured.enquiry || "Real estate enquiry")}`;
+      feature.innerHTML = `
+        <p class="section-kicker">${escapeHTML(featured.kicker || "Real estate")}</p>
+        <h2>${escapeHTML(featured.title)}</h2>
+        <p>${escapeHTML(featured.description)}</p>
+        <a class="button button-primary" href="${href}">${escapeHTML(featured.ctaLabel || "Enquire now")}
+          ${icon("arrow")}
+        </a>`;
+    }
+
+    if (listingsSection) {
+      listingsSection.hidden = listings.length === 0;
+    }
+
+    if (grid) {
+      grid.innerHTML = listings.map((property) => propertyCard(property)).join("");
+    }
+  }
+
   function renderProjects() {
     const featuredGrid = document.querySelector("[data-featured-projects]");
     const portfolioGrid = document.querySelector("[data-project-grid]");
 
+    // Project cards are generated from assets/js/projects-data.js.
     if (featuredGrid) {
       featuredGrid.innerHTML = projects.slice(0, 2).map((project, index) => projectCard(project, index === 0)).join("");
     }
@@ -351,7 +433,9 @@
   }
 
   renderShell();
+  // Keep editable page lists in their own data files; app.js only renders them.
   renderProjects();
+  renderRealEstate();
   renderProjectDetail();
   initNavigation();
   revealOnScroll();

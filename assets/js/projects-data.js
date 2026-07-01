@@ -5,6 +5,13 @@
  * 1. Copy its images into assets/images/
  * 2. Duplicate one project object below.
  * 3. Give it a unique id and update the text/image paths.
+ * 4. Add the new object before the final closing bracket.
+ *
+ * Important fields:
+ * - id: unique URL key used by project.html?id=...
+ * - categories: must match filter names on projects.html
+ * - image: main card/detail image
+ * - gallery: detail-page gallery images
  *
  * The Projects page and Project Details page update automatically.
  */
@@ -21,7 +28,7 @@ window.MEDORA_PROJECTS = [
       "This villa brings the familiarity of Kerala's sloping-roof architecture into a refined contemporary plan. Deep overhangs, layered gables and practical outdoor spaces create shade, comfort and a strong sense of arrival.",
     area: "On request",
     status: "Design concept",
-    year: "2024",
+    year: "2025",
     image: "assets/images/medora-traditional-evening.jpg",
     gallery: [
       "assets/images/medora-traditional-evening.jpg",
@@ -41,7 +48,7 @@ window.MEDORA_PROJECTS = [
       "A composed villa planned around everyday family living. The layout and elevation focus on usable balconies, shaded openings and a practical frontage suited to Kerala's climate.",
     area: "On request",
     status: "Concept design",
-    year: "2024",
+    year: "2025",
     image: "assets/images/medora-classic-villa-render.jpg",
     gallery: [
       "assets/images/medora-classic-villa-render.jpg",
@@ -61,7 +68,7 @@ window.MEDORA_PROJECTS = [
       "This completed home shows Medora's focus on practical execution, proportion and finish. The shaded frontage, tiled roofline and wide paved court create a welcoming setting for everyday family life.",
     area: "On request",
     status: "Completed",
-    year: "2024",
+    year: "2025",
     image: "assets/images/medora-family-residence.jpg",
     gallery: [
       "assets/images/medora-family-residence.jpg",
@@ -81,7 +88,7 @@ window.MEDORA_PROJECTS = [
       "A compact residence where roof geometry, porch depth and simple detailing add character without overcomplicating the build. The design keeps everyday usability at the centre.",
     area: "On request",
     status: "Completed",
-    year: "2024",
+    year: "2025",
     image: "assets/images/medora-pitched-roof-front.jpg",
     gallery: [
       "assets/images/medora-pitched-roof-front.jpg",
@@ -101,7 +108,7 @@ window.MEDORA_PROJECTS = [
       "This residence shows how compound wall detailing, roof planning and outdoor frontage can work together as part of the complete home. The design keeps construction, maintenance and daily use in mind.",
     area: "On request",
     status: "Completed",
-    year: "2024",
+    year: "2025",
     image: "assets/images/medora-stone-fence-residence.jpg",
     gallery: [
       "assets/images/medora-stone-fence-residence.jpg",
@@ -121,7 +128,7 @@ window.MEDORA_PROJECTS = [
       "Interior design is approached as part of the whole building experience. This detail combines lighting, texture and planted space to create a calm transition within the home.",
     area: "On request",
     status: "Completed",
-    year: "2024",
+    year: "2025",
     image: "assets/images/medora-interior-courtyard.jpg",
     gallery: [
       "assets/images/medora-interior-courtyard.jpg",
