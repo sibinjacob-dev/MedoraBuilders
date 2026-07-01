@@ -10,6 +10,7 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/png">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/projects-data.js" defer></script>
+    <script src="assets/js/real-estate-data.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </head>
   <body class="inner-page" data-page="real-estate">
@@ -26,14 +27,12 @@
       </section>
 
       <section class="property-feature">
-        <div class="property-feature-media">
-          <img src="assets/images/medora-classic-villa-render.jpg" alt="Contemporary villa property opportunity by Medora Builders">
-        </div>
+        <div class="property-feature-media property-feature-placeholder" aria-hidden="true"></div>
         <div class="container property-feature-content">
-          <div class="property-feature-card" data-reveal>
+          <div class="property-feature-card" data-real-estate-feature data-reveal>
             <p class="section-kicker">Featured availability</p>
-            <h2>Villa-ready residential sites and curated home opportunities.</h2>
-            <p>Our real estate support connects site selection with practical design guidance, so buyers can understand access, frontage, buildability and long-term value before committing.</p>
+            <h2>Real estate listings are being refreshed.</h2>
+            <p>Current opportunities are being verified before publication. Please contact our team for the latest availability and viewing options.</p>
             <a class="button button-primary" href="contact.html?project=Real%20estate%20enquiry">Enquire now
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
@@ -41,77 +40,17 @@
         </div>
       </section>
 
-      <section class="section">
+      <section class="section" data-real-estate-listings-section hidden>
         <div class="container">
           <div class="section-heading inline-heading" data-reveal>
             <div>
               <p class="section-kicker">Current properties</p>
               <h2>Available for enquiry.</h2>
             </div>
-            <p>Listings can be updated as availability changes. Each enquiry is handled directly so the team can confirm status, location details and viewing options.</p>
+            <p>Confirmed real estate opportunities will appear here as availability is published.</p>
           </div>
 
-          <div class="property-grid">
-            <article class="property-card" data-reveal>
-              <a class="property-image" href="contact.html?project=Premium%20villa%20plot%20enquiry" aria-label="Enquire about premium villa plot">
-                <img src="assets/images/medora-traditional-evening.jpg" alt="Premium villa plot concept in Kerala" loading="lazy">
-                <span>Available</span>
-              </a>
-              <div class="property-copy">
-                <div class="property-meta"><span>Mallappally</span><span>Residential plot</span></div>
-                <h3>Premium Villa Plot</h3>
-                <p>A calm residential setting suited for a custom villa, with scope for traditional or contemporary architecture.</p>
-                <dl class="property-facts-list">
-                  <div><dt>Area</dt><dd>On request</dd></div>
-                  <div><dt>Price</dt><dd>On request</dd></div>
-                  <div><dt>Status</dt><dd>Open for enquiry</dd></div>
-                </dl>
-                <a class="text-link" href="contact.html?project=Premium%20villa%20plot%20enquiry">Request details
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="property-card" data-reveal>
-              <a class="property-image" href="contact.html?project=Build-ready%20home%20site%20enquiry" aria-label="Enquire about build-ready home site">
-                <img src="assets/images/medora-stone-fence-residence.jpg" alt="Build-ready home site in Kerala" loading="lazy">
-                <span>Available</span>
-              </a>
-              <div class="property-copy">
-                <div class="property-meta"><span>Thiruvalla</span><span>Build-ready site</span></div>
-                <h3>Build-Ready Home Site</h3>
-                <p>A practical parcel for a modern residence, ideal for clients who want design and construction handled together.</p>
-                <dl class="property-facts-list">
-                  <div><dt>Area</dt><dd>On request</dd></div>
-                  <div><dt>Price</dt><dd>On request</dd></div>
-                  <div><dt>Status</dt><dd>Viewing by appointment</dd></div>
-                </dl>
-                <a class="text-link" href="contact.html?project=Build-ready%20home%20site%20enquiry">Request details
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </article>
-
-            <article class="property-card" data-reveal>
-              <a class="property-image" href="contact.html?project=Villa%20concept%20opportunity%20enquiry" aria-label="Enquire about villa concept opportunity">
-                <img src="assets/images/medora-classic-villa-render.jpg" alt="Villa concept opportunity in Kerala" loading="lazy">
-                <span>Available</span>
-              </a>
-              <div class="property-copy">
-                <div class="property-meta"><span>Central Kerala</span><span>Villa opportunity</span></div>
-                <h3>Villa Concept Opportunity</h3>
-                <p>A curated opportunity for buyers who want a property evaluated with architectural planning from day one.</p>
-                <dl class="property-facts-list">
-                  <div><dt>Area</dt><dd>On request</dd></div>
-                  <div><dt>Price</dt><dd>On request</dd></div>
-                  <div><dt>Status</dt><dd>Open for enquiry</dd></div>
-                </dl>
-                <a class="text-link" href="contact.html?project=Villa%20concept%20opportunity%20enquiry">Request details
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-                </a>
-              </div>
-            </article>
-          </div>
+          <div class="property-grid" data-real-estate-grid></div>
         </div>
       </section>
 
