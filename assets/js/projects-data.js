@@ -17,6 +17,25 @@
  */
 window.MEDORA_PROJECTS = [
   {
+    id: "gabled-family-villa",
+    title: "Gabled Family Villa",
+    location: "Kerala",
+    style: "Traditional",
+    categories: ["Traditional", "Villas"],
+    summary:
+      "A warm villa concept with twin gables, brick detail, stone textures and a generous paved approach.",
+    description:
+      "This residence brings together Kerala-friendly roof forms, shaded openings, textured stonework and a clear arrival court. The design balances a traditional silhouette with practical frontage, soft landscaping and everyday family use.",
+    area: "On request",
+    status: "Design concept",
+    year: "2026",
+    image: "assets/images/medora-gabled-villa-front.jpg",
+    gallery: [
+      "assets/images/medora-gabled-villa-front.jpg",
+      "assets/images/medora-gabled-villa-angle.jpg"
+    ]
+  },
+  {
     id: "traditional-evening-villa",
     title: "Traditional Evening Villa",
     location: "Kerala",
